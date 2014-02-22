@@ -5,22 +5,34 @@ define(function (require) {
     var $ = require('jquery'),
         Backbone = require('backbone'),
         PageSlider = require('app/utils/pageslider'),
-        HomeView = require('app/views/HomeView'),
+        AlarmView = require('app/views/AlarmView'),
 
-        slider = new PageSlider($('body')),
+        slider = new PageSlider($('.app-content')),
 
-        homeView = new HomeView();
+        alarmView = new AlarmView();
 
     return Backbone.Router.extend({
 
         routes: {
-            "": "home",
+            "": "alarm",
+            "wakeup": "wakeup",
+            "profile": "profile",
             "products/:id": "productDetails"
         },
 
-        home: function () {
-            homeView.delegateEvents();
-            slider.slidePage(homeView.$el);
+        alarm: function () {
+            alarmView.delegateEvents();
+            slider.slidePage(alarmView.$el);
+        },
+
+        wakeup: function () {
+            alarmView.delegateEvents();
+            slider.slidePage(alarmView.$el);
+        },
+
+        profile: function () {
+            alarmView.delegateEvents();
+            slider.slidePage(alarmView.$el);
         },
 
         productDetails: function (id) {
