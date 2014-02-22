@@ -26,10 +26,7 @@ define(function (require) {
 
         events: {
             "keyup .search-key":    "search",
-            "keypress .search-key": "onkeypress",
-            "click #alarm-button": "alarm",
-            "click #wakeup-button": "wakeup",
-            "click #profile-button": "profile"
+            "keypress .search-key": "onkeypress"
         },
 
         search: function (event) {
@@ -41,21 +38,6 @@ define(function (require) {
             if (event.keyCode === 13) { // enter key pressed
                 event.preventDefault();
             }
-        },
-
-        wakeup: function (event) {
-            var key = $('.search-key').val();
-            this.productList.fetch({reset: true, data: {name: key}});
-        },
-
-        alarm: function (event) {
-            var key = $('.search-key').val();
-            this.productList.fetch({reset: true, data: {name: key}});
-        },
-
-        profile: function (event) {
-            var key = $('.search-key').val();
-            this.productList.fetch({reset: true, data: {name: key}});
         }
 
     });

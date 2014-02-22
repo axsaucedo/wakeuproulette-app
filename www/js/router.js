@@ -15,16 +15,12 @@ define(function (require) {
 
         routes: {
             "": "home",
-            "products/:id": "productDetails",
-            "alarm": "alarm",
-            "wakeup": "wakeup",
-            "profile": "profile"
+            "products/:id": "productDetails"
         },
 
         home: function () {
             homeView.delegateEvents();
-            $('body').append(homeView.$el);
-            homeView.$el.attr("class", "page page-center");
+            slider.slidePage(homeView.$el);
         },
 
         productDetails: function (id) {
@@ -36,21 +32,6 @@ define(function (require) {
                     }
                 });
             });
-        },
-
-        wakeup: function() {
-            require(["app/models/product", "app/views/ProductView"], function (models, ProductView) {
-                var product = new models.Product({id: 2});
-                product.fetch({
-                    success: function (data) {
-                        slider.slidePage(new ProductView({model: data}).$el);
-                    }
-                });
-            });  
-        }, 
-
-        profile: function() {
-
         }
 
     });
