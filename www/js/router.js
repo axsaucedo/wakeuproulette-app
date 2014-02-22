@@ -6,10 +6,14 @@ define(function (require) {
         Backbone = require('backbone'),
         PageSlider = require('app/utils/pageslider'),
         AlarmView = require('app/views/AlarmView'),
+        WakeUpView = require('app/views/WakeUpView'),
+        ProfileView = require('app/views/ProfileView'),
 
         slider = new PageSlider($('.app-content')),
 
-        alarmView = new AlarmView();
+        alarmView = new AlarmView(),
+        wakeUpView = new WakeUpView(),
+        profileView = new ProfileView();
 
     return Backbone.Router.extend({
 
@@ -26,13 +30,13 @@ define(function (require) {
         },
 
         wakeup: function () {
-            alarmView.delegateEvents();
-            slider.slidePage(alarmView.$el);
+            wakeUpView.delegateEvents();
+            slider.slidePage(wakeUpView.$el);
         },
 
         profile: function () {
-            alarmView.delegateEvents();
-            slider.slidePage(alarmView.$el);
+            profileView.delegateEvents();
+            slider.slidePage(profileView.$el);
         },
 
         productDetails: function (id) {
