@@ -15,22 +15,22 @@
     transform: translate3d(0, 0, 0);
 }
 
-.page.page-left {
+.page-left {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
 }
 
-.page.page-center {
+.page-center {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-.page.page-right {
+.page-right {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
 }
 
-.page.transition {
+.transition {
     -webkit-transition-duration: .25s;
     transition-duration: .25s;
 }
