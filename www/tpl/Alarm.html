@@ -1,0 +1,38 @@
+<style>
+	.alarm-form {
+		margin: auto auto;
+		text-align: center;
+		padding: 10px 10px 10px 10px;
+	}
+	.alarm-time {
+		font-size: 3em;
+		margin: auto auto;
+		width: 100%;
+	}
+	.topcoat-switch {
+		margin-top: 20px;
+		-webkit-transform: scale(1.2,1.2);
+		text-align: left;
+	}
+	.squaredTwo {
+		-webkit-transform: scale(1.2,1.2);
+	}
+
+</style>
+
+<h1>Setup your Alarm</h1>
+
+<form class="alarm-form">
+	<input class="alarm-time" type="time"/>
+	<label class="topcoat-switch">
+	  <input type="checkbox" class="topcoat-switch__input">
+	  <div class="topcoat-switch__toggle"></div>
+	</label>
+	<br><br>
+
+	<span class="inline" style="float:right;position:relative;right:60px;">Repeat:</span>
+		<div class="squaredTwo" style="position:relative;top:-25px;left:0px;margin-right:20px;margin-bottom:0px;">
+			<input type="checkbox" value="None" id="recurrent" data-set_recurrent_url="{% url 'accounts.ajax.set_recurrent' %}" name="check" {% if request.user.profile.recurring %}checked{% endif %} />
+			<label for="recurrent"></label>
+	</div>
+</form>
