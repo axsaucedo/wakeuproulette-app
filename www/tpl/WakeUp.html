@@ -10,58 +10,13 @@
 </style>
 
 <h1>Wake Someone Up!</h1>
-
-<form class="alarm-form">
-	<h1>06:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-<form class="alarm-form">
-	<h1>07:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-
-<form class="alarm-form">
-	<h1>08:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-
-<form class="alarm-form">
-	<h1>09:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-
-<form class="alarm-form">
-	<h1>10:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-
-<form class="alarm-form">
-	<h1>11:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
-
-<form class="alarm-form">
-	<h1>12:00</h1>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-</form>
+<button class="action-button">Hello</button>
+{{#.}}
+	<form class="alarm-form">
+		<h1>{{this.time}}</h1>
+		<label class="topcoat-switch">
+		  <input type="checkbox" class="topcoat-switch__input">
+		  <div class="topcoat-switch__toggle"></div>
+		</label>
+	</form>
+{{/.}}

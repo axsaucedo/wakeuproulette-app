@@ -28,6 +28,31 @@ define(function (require) {
             return deferred.promise();
         },
 
+        getWakeUp = function(hour) {
+            var deferred = $.Deferred();
+            var result = {
+                        "hour": hour
+                    ,   "active": Math.random()<.5
+                    ,   "subscribed": Math.floor(Math.random()*100)
+                }
+            deferred.resolve(result);
+            return deferred.promise();
+        },
+
+        getWakeUps = function(from, to) {
+            var deferred = $.Deferred();
+            var results = [];
+            for (var i = from; i < to+1; i++) {
+                results.push({
+                        "hour": i
+                    ,   "active": Math.random()<.5
+                    ,   "subscribed": Math.floor(Math.random()*100)
+                })
+            }
+            deferred.resolve(results);
+            return deferred.promise();
+        },
+
         products = [
             {   "id": 1,
                 "name": "Tuareg Summer",
@@ -194,11 +219,39 @@ define(function (require) {
                 }
             }
 
+        }),
+
+        WakeUp = Backbone.Model.extend({
+
+            sync: function (method, model, options) {
+                if (method === "read") {
+                    getWakeUp(parseInt(options.data.hour)).done(function (data) {
+                        options.success(data);
+                    });
+                }
+            }
+
+        }),
+
+        WakeUpCollection = Backbone.Collection.extend({
+
+            model: WakeUp,
+
+            sync: function (method, model, options) {
+                if (method === "read") {
+                    getWakeUps(parseInt(options.data.from), parseInt(options.data.to)).done(function (data) {
+                        options.success(data);
+                    });
+                }
+            }
+
         });
 
     return {
         Product: Product,
-        ProductCollection: ProductCollection
+        ProductCollection: ProductCollection,
+        WakeUp: WakeUp,
+        WakeUpCollection: WakeUpCollection
     };
 
 });

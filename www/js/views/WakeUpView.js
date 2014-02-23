@@ -14,24 +14,38 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.productList = new models.ProductCollection();
+            this.wakeUpList = new models.WakeUpCollection();
             this.render();
         },
 
         render: function () {
-            this.$el.html(template());
-            this.listView = new ProductListView({collection: this.productList, el: $(".scroller", this.el)});
+            this.wakeUpList.fetch({ data: { from: 0, to: 10 }});
+            var wakeups = this.wakeUpList.toJSON();
+            var nowHour = (new Date()).getHours()+1;
+            wakeups.forEach(function(wakeup) {
+                var hour = parseInt(wakeup.hour);
+                wakeup.time = "" + ((nowHour+hour)%24) + ":00";
+            })
+            console.log(wakeups);
+            this.$el.html(template(wakeups));
             return this;
         },
 
         events: {
             "keyup .search-key":    "search",
-            "keypress .search-key": "onkeypress"
+            "keypress .search-key": "onkeypress",
+            "click .action-button": "other"
         },
 
         search: function (event) {
+            console.log("here");
             var key = $('.search-key').val();
             this.productList.fetch({reset: true, data: {name: key}});
+
+        },
+
+        other: function (event) {
+            console.log("works");
         },
 
         onkeypress: function (event) {
