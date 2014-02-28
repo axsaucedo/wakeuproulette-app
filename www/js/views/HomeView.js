@@ -6,7 +6,7 @@ define(function (require) {
         Handlebars      = require('handlebars'),
         Backbone        = require('backbone'),
         models          = require('app/models/wur-api'),
-        tplText         = require('text!tpl/Alarm.html'),
+        tplText         = require('text!tpl/Home.html'),
         template = Handlebars.compile(tplText);
 
 
@@ -14,7 +14,6 @@ define(function (require) {
 
         initialize: function () {
             this.render();
-            console.log("bal");
         },
 
         render: function () {

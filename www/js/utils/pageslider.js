@@ -6,47 +6,58 @@ define(function (require) {
 
     return function PageSlider(container) {
 
-        var currentPage,
-            stateHistory = [];
+        var currentPage;
+            // stateHistory = [];
 
-        this.back = function () {
-            location.hash = stateHistory[stateHistory.length - 2];
-        };
+        // this.back = function () {
+        //     location.hash = stateHistory[stateHistory.length - 2];
+        // };
 
         // Use this function if you want PageSlider to automatically determine the sliding direction based on the state history
-        this.slidePage = function (page) {
+        this.slidePage = function (page, full) {
 
-            var l = stateHistory.length,
-                state = window.location.hash;
+            // var l = stateHistory.length,
+            //     state = window.location.hash;
 
-            if (l === 0) {
-                stateHistory.push(state);
-                this.slidePageFrom(page);
-                return;
-            }
-            if (state === stateHistory[l - 2]) {
-                stateHistory.pop();
-                this.slidePageFrom(page, 'page-left');
+            // if (l === 0) {
+            //     stateHistory.push(state);
+            //     this.slidePageFrom(page);
+            //     return;
+            // }
+            // if (state === stateHistory[l - 2]) {
+            //     stateHistory.pop();
+            //     this.slidePageFrom(page, 'page-left');
+            // } else {
+            //     stateHistory.push(state);
+            //     this.slidePageFrom(page, 'page-right');
+            // }
+            console.log("sliding")
+
+            if (!currentPage) {
+                this.slidePageFrom(page, null, full);
+                return
             } else {
-                stateHistory.push(state);
-                this.slidePageFrom(page, 'page-right');
+                this.slidePageFrom(page, 'page-right', full);
             }
 
         };
 
         // Use this function directly if you want to control the sliding direction outside PageSlider
-        this.slidePageFrom = function (page, from) {
+        this.slidePageFrom = function (page, from, full) {
+
+            console.log(full);
+            console.log("works?");
 
             container.append(page);
 
             if (!currentPage || !from) {
-                page.attr("class", "page-center");
+                page.attr("class", (full ? "full-page" : "page") + " page-center");
                 currentPage = page;
                 return;
             }
 
             // Position the page at the starting position of the animation
-            page.attr("class", from);
+            page.attr("class", (full ? "full-page" : "page") + " transition page-right");
 
             currentPage.one('webkitTransitionEnd', function (e) {
                 $(e.target).remove();
@@ -57,8 +68,8 @@ define(function (require) {
 
             // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
 
-            page.attr("class", "transition page-center");
-            currentPage.attr("class", "transition " + (from === "page-left" ? "page-right" : "page-left"));
+            currentPage.attr("class", "page transition page-left");
+            page.attr("class", (full ? "full-page" : "page") + " transition page-center");
             currentPage = page;
         };
 

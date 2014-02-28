@@ -5,8 +5,7 @@ define(function (require) {
     var $               = require('jquery'),
         Handlebars      = require('handlebars'),
         Backbone        = require('backbone'),
-        ProductListView = require('app/views/ProductListView'),
-        models          = require('app/models/product'),
+        models          = require('app/models/wur-api'),
         tplText         = require('text!tpl/Alarm.html'),
         template = Handlebars.compile(tplText);
 
@@ -14,30 +13,24 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.productList = new models.ProductCollection();
             this.render();
+            console.log("bal");
         },
 
         render: function () {
             this.$el.html(template());
-            this.listView = new ProductListView({collection: this.productList, el: $(".scroller", this.el)});
             return this;
         },
 
         events: {
-            "keyup .search-key":    "search",
-            "keypress .search-key": "onkeypress"
+            "change .alarm-time" : "alarm_change"
         },
 
-        search: function (event) {
-            var key = $('.search-key').val();
-            this.productList.fetch({reset: true, data: {name: key}});
-        },
-
-        onkeypress: function (event) {
-            if (event.keyCode === 13) { // enter key pressed
-                event.preventDefault();
-            }
+        alarm_change : function(event) {
+            // console.log(event);
+            var hour = parseInt($(".alarm-time").val().split(":")[0]);
+            var time = (hour < 10 ? "0" : "") + hour + ":00:00";
+            $(".alarm-time").val(time);
         }
 
     });

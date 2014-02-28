@@ -6,7 +6,7 @@ define(function (require) {
         Handlebars      = require('handlebars'),
         Backbone        = require('backbone'),
         ProductListView = require('app/views/ProductListView'),
-        models          = require('app/models/product'),
+        models          = require('app/models/wur-api'),
         tplText         = require('text!tpl/Profile.html'),
         template = Handlebars.compile(tplText);
 

@@ -10,7 +10,7 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
-    <name>WakeUpRoulette</name>
+    <name>WakeUp Roulette</name>
     <description>
         Wake up every day to an amazing conversation!
     </description>

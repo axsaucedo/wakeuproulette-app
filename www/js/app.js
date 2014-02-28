@@ -9,7 +9,7 @@ require.config({
 
     map: {
         '*': {
-            'app/models/product': 'app/models/memory/product'
+            'app/models/wur-api': 'app/models/memory/wur-api'
         }
     },
     shim: {

@@ -5,12 +5,15 @@ define(function (require) {
     var $ = require('jquery'),
         Backbone = require('backbone'),
         PageSlider = require('app/utils/pageslider'),
+
+        HomeView = require('app/views/HomeView'),
         AlarmView = require('app/views/AlarmView'),
         WakeUpView = require('app/views/WakeUpView'),
         ProfileView = require('app/views/ProfileView'),
 
         slider = new PageSlider($('.app-content')),
 
+        homeView = new HomeView(),
         alarmView = new AlarmView(),
         wakeUpView = new WakeUpView(),
         profileView = new ProfileView();
@@ -18,10 +21,16 @@ define(function (require) {
     return Backbone.Router.extend({
 
         routes: {
-            "": "alarm",
+            "": "home",
+            "alarm": "alarm",
             "wakeup": "wakeup",
             "profile": "profile",
             "products/:id": "productDetails"
+        },
+
+        home: function() {
+            console.log("here")
+            slider.slidePage(homeView.$el, true);
         },
 
         alarm: function () {
@@ -40,7 +49,7 @@ define(function (require) {
         },
 
         productDetails: function (id) {
-            require(["app/models/product", "app/views/ProductView"], function (models, ProductView) {
+            require(["app/models/wur-api", "app/views/ProductView"], function (models, ProductView) {
                 var product = new models.Product({id: id});
                 product.fetch({
                     success: function (data) {

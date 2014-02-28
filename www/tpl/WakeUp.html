@@ -9,14 +9,15 @@
 	}
 </style>
 
-<h1>Wake Someone Up!</h1>
-<button class="action-button">Hello</button>
+<div class="page-title">Wake Someone Up!</div>
+<!-- <button class="action-button">Hello</button> -->
 {{#.}}
 	<form class="alarm-form">
 		<h1>{{this.time}}</h1>
 		<label class="topcoat-switch">
-		  <input type="checkbox" class="topcoat-switch__input">
+		  <input type="checkbox" class="topcoat-switch__input" {{#if this.active}}checked{{/if}}>
 		  <div class="topcoat-switch__toggle"></div>
 		</label>
+	  <span>Subscribed: {{this.subscribed}}</span>	
 	</form>
 {{/.}}

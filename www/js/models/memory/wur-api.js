@@ -49,7 +49,8 @@ define(function (require) {
                     ,   "subscribed": Math.floor(Math.random()*100)
                 })
             }
-            deferred.resolve(results);
+            setTimeout(function() { console.log(results); deferred.resolve(results); }, 2000);
+            console.log("noss");
             return deferred.promise();
         },
 
