@@ -23,13 +23,19 @@ define(function (require) {
         },
 
         events: {
-            "change .alarm-time" : "alarm_change"
+            "click .alarm-arrow-up" : "alarm_up",
+            "click .alarm-arrow-down" : "alarm_down"
         },
 
-        alarm_change : function(event) {
-            // console.log(event);
-            var hour = parseInt($(".alarm-time").val().split(":")[0]);
-            var time = (hour < 10 ? "0" : "") + hour + ":00:00";
+        alarm_up : function(event) {
+            var hour = (parseInt($(".alarm-time").val().split(":")[0]) + 25) % 24;
+            var time = (hour < 10 ? "0" : "") + hour + ":00";
+            $(".alarm-time").val(time);
+        },
+
+        alarm_down : function(event) {
+            var hour = (parseInt($(".alarm-time").val().split(":")[0]) + 23) % 24;
+            var time = (hour < 10 ? "0" : "") + hour + ":00";
             $(".alarm-time").val(time);
         }
 

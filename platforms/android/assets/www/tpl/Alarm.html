@@ -1,37 +1,30 @@
 <style>
-	.alarm-form {
-		margin: auto auto;
-		text-align: center;
-		padding: 10px 10px 10px 10px;
-	}
-	.alarm-time {
-		font-size: 3em;
-		margin: auto auto;
-		width: 100%;
-	}
-	.topcoat-switch {
-		margin-top: 20px;
-		-webkit-transform: scale(1.2,1.2);
-		text-align: left;
-	}
-	.squaredTwo {
-		-webkit-transform: scale(1.2,1.2);
-	}
-
+@font-face {
+    font-family: "ostrich";
+    src: url("assets/css/fonts/Ostrich.ttf") format("truetype"); 
+    src: url("assets/css/fonts/Ostrich.otf") format("opentype"); 
+}
 </style>
 
 <div class="page-title">Setup Your Alarm</div>
 
 <form class="alarm-form">
-	<input class="alarm-time" type="time" value="06:00:00"/>
-	<label class="topcoat-switch">
-	  <input type="checkbox" class="topcoat-switch__input">
-	  <div class="topcoat-switch__toggle"></div>
-	</label>
-	<br><br>
-
+	<div class="alarm-container">
+		<input class="alarm-time" type="text" value="06:00" readonly/>
+		<div class="alarm-arrow-up"><div class="arrow-up"></div></div>
+		<div class="alarm-arrow-down"><div class="arrow-down"></div></div>
+	</div>
+	<div id="switch" class="inline wakeup-box-shadow">
+        <input id="myonoffswitch" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {% if request.user.profile.alarmon %}checked{% endif %}>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <div class="onoffswitch-inner">
+                <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+                <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+            </div>
+        </label>
+    </div>
 	<span class="inline" style="float:right;position:relative;right:60px;">Repeat:</span>
-		<div class="squaredTwo" style="position:relative;top:-25px;left:0px;margin-right:20px;margin-bottom:0px;">
+		<div class="cool-checkbox" style="position:relative;top:-25px;left:0px;margin-right:20px;margin-bottom:0px;">
 			<input type="checkbox" value="None" id="recurrent" data-set_recurrent_url="{% url 'accounts.ajax.set_recurrent' %}" name="check" {% if request.user.profile.recurring %}checked{% endif %} />
 			<label for="recurrent"></label>
 	</div>
