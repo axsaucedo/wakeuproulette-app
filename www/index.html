@@ -3,40 +3,33 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link href="assets/topcoat/css/topcoat-mobile-light.min.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <!-- <link href="assets/topcoat/css/topcoat-mobile-light.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet"> -->
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/pageslider.css" rel="stylesheet">
     <script data-main="js/app" src="lib/require.js"></script>
 </head>
 
 <body>
-	<div class="topcoat-navigation-bar">
-	    <div class="topcoat-navigation-bar__item center full">
-			<div class="topcoat-tab-bar full">
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="topcoat">
-					<a href="#/alarm" class="topcoat-tab-bar__button full">
-						<img class="nav-button-img" src="assets/img/alarm-icon.png">
-					</a>
-				</label>
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="topcoat">
-					<a href="#/wakeup" class="topcoat-tab-bar__button full">
-						<img class="nav-button-img" src="assets/img/mega-icon.png">
-					</a>
-				</label>
-				<label class="topcoat-tab-bar__item">
-					<input type="radio" name="topcoat">
-					<a href="#/profile" class="topcoat-tab-bar__button full">
-						<img class="nav-button-img" src="assets/img/holder-icon.png">
-					</a>
-				</label>
-			</div>
+	<div id="navbar">
+		<div class="nav-button col-3">
+			<a href="#/alarm">
+				<img class="nav-button-img" src="assets/img/alarm-icon.png"/>
+			</a>
 		</div>
+		<div class="nav-button col-3">
+			<a href="#/wakeup">
+				<img class="nav-button-img" src="assets/img/mega-icon.png"/>
+			</a>
+		</div>
+		<div class="nav-button col-3">
+			<a href="#/profile">
+				<img class="nav-button-img" src="assets/img/holder-icon.png"/>
+			</a>
+		</div>	
 	</div>
 
 	<div class="app-content"></div>
-
 </body>
 
 </html>
