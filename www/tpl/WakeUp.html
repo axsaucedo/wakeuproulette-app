@@ -1,23 +1,36 @@
 <style>
-	h1 {
-		float:left;
-	}
-	form {
+	.wakeup-container {
 		clear:both;
 		margin: auto auto;
-		padding: 30px 30px 30px 30px;
+		padding: 20px 30px 60px 30px;
+		margin-top: 20px;
+	}
+	.wakeup-container:active {
+		border: solid;
+		border-style: double;
+		border-radius: 15px;
+	}
+	#switch {
+		margin-left: 20px;
 	}
 </style>
 
 <div class="page-title">Wake Someone Up!</div>
 <!-- <button class="action-button">Hello</button> -->
 {{#.}}
-	<form class="alarm-form">
-		<h1>{{this.time}}</h1>
-		<label class="topcoat-switch">
-		  <input type="checkbox" class="topcoat-switch__input" {{#if this.active}}checked{{/if}}>
-		  <div class="topcoat-switch__toggle"></div>
-		</label>
-	  <span>Subscribed: {{this.subscribed}}</span>	
+	<form class="wakeup-container">
+		<div class="col-3" style="font-size: 40px">{{this.time}}</div>
+		<div class="col-3">
+			<div id="switch">
+		        <input id="myonoffswitch-{{i}}" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {{#if this.active}}checked{{/if}}>
+		        <label class="onoffswitch-label" for="myonoffswitch-{{i}}">
+		            <div class="onoffswitch-inner">
+		                <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+		                <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+		            </div>
+		        </label>
+		    </div>
+	    </div>
+	  	<div class="col-3">Subscribed: {{this.subscribed}}</div>	
 	</form>
 {{/.}}
