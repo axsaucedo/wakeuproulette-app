@@ -22,8 +22,8 @@
 		<div class="col-3" style="font-size: 40px">{{this.time}}</div>
 		<div class="col-3">
 			<div id="switch">
-		        <input id="myonoffswitch-{{i}}" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {{#if this.active}}checked{{/if}}>
-		        <label class="onoffswitch-label" for="myonoffswitch-{{i}}">
+		        <input id="myonoffswitch-{{@index}}" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {{#if this.active}}checked{{/if}}>
+		        <label class="onoffswitch-label" for="myonoffswitch-{{@index}}">
 		            <div class="onoffswitch-inner">
 		                <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
 		                <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
