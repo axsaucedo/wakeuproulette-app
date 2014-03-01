@@ -9,7 +9,9 @@
 }
 @font-face {
     font-family: "ostrich";
-    src: url("../fonts/Ostrich.ttf") format("truetype"); 
+    src: url("../fonts/Ostrich.ttf") format("truetype");
+    src: url("../fonts/Ostrich.wofff") format("woff");
+    src: url("../fonts/Ostrich.svg") format("svg"); 
     src: url("../fonts/Ostrich.otf") format("opentype"); 
 }
 @font-face {

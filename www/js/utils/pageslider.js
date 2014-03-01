@@ -31,7 +31,6 @@ define(function (require) {
             //     stateHistory.push(state);
             //     this.slidePageFrom(page, 'page-right');
             // }
-            console.log("sliding")
 
             if (!currentPage) {
                 this.slidePageFrom(page, null, full);
