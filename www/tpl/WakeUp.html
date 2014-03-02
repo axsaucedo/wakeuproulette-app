@@ -10,7 +10,7 @@
 		border-style: double;
 		border-radius: 15px;
 	}
-	#switch {
+	.wakeup-switch {
 		margin-left: 20px;
 	}
 </style>
@@ -19,9 +19,9 @@
 <!-- <button class="action-button">Hello</button> -->
 {{#.}}
 	<form class="wakeup-container">
-		<div class="col-3" style="font-size: 40px">{{this.time}}</div>
+		<div class="col-3 wakeup-time" style="font-size: 40px">{{this.time}}</div>
 		<div class="col-3">
-			<div id="switch">
+			<div class="wakeup-switch">
 		        <input id="myonoffswitch-{{@index}}" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {{#if this.active}}checked{{/if}}>
 		        <label class="onoffswitch-label" for="myonoffswitch-{{@index}}">
 		            <div class="onoffswitch-inner">

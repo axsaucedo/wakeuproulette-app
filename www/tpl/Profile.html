@@ -1,5 +1,99 @@
 <style>
 
+/* CALL HISTORY */
+
+#call-history {
+    width: 25%;
+    min-width: 320px;
+    margin-left: 20px;
+}
+
+#call-history-box {
+    height: 530px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.recording-info div {
+    float: right;
+    width: 195px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.recording-username {
+    height: 17px;
+}
+.recording-privacy-box {
+    height: 22px;
+}
+.recording-privacy-box * {
+    margin: auto auto;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.recording-share {
+    width: 100px;
+}
+
+.btn_publish {
+    font-family: NexaBold;
+    font-weight:normal;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    border:1px solid #3866a3;
+    padding:3px 18px;
+    text-decoration:none;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #63b8ee), color-stop(100%, #468ccf) );
+    background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+    background:-ms-linear-gradient( top, #63b8ee 5%, #468ccf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+    background-color:#63b8ee;
+    color:#14396a;
+    border: 0;
+    outline:0 none !important;
+    outline:none;
+    display:inline-block;
+}.btn_publish:hover {
+     background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #468ccf), color-stop(100%, #63b8ee) );
+     background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
+     background:-ms-linear-gradient( top, #468ccf 5%, #63b8ee 100% );
+     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
+     border: 0;
+     outline:none;
+     outline:0 none !important;
+     background-color:#468ccf;
+ }.btn_publish:active {
+      position:relative;
+      border: none;
+      outline:none;
+      outline:0 none !important;
+      border: 0;
+      top:1px;
+  }
+
+.recording-audio {
+    clear:both;
+    width: 100%;
+}
+
+.recording-data {
+    clear: both;
+    width: 100%;
+    padding: 10px 0px 0px 5px;
+}
+.recording-data div {
+    width: 30%;
+    float: left;
+}
+.recording-data img {
+    width: 30px;
+}
+
+
 .recording {
     padding: 20px 5px 50px 5px;
 }
@@ -106,232 +200,1057 @@
 #wakeup-diary-box {
     padding: 0px 20px 0px 20px;
 }
+.history-recording {
+	margin-top: 50px;
+}
+a {
+	color: white;
+}
 </style>
 
-<div class="search-bar">
-</div>
 <div class="page-title">Oh Hai</div>
-<div id="wakeup-diary-box">
-    <div idx="8" class="shared-recording recording">
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        Hahah such a pleasure conversing with you tonight Sloafe!! I wish you an great weekend and an Awesome holidays :))
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE629d775b559afb62699439f2e95a2cc7" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>1</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>5</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
-	                
-	                    <div idx="7" class="shared-recording recording">
-	    
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        Hahah Mr Aziz!! Such a pleasure hearing from you hermano!! Am I gonna see you this weekend bro??
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE7dd798071ea37a5f7d6ccda5a27af97d" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>2</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>8</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
-	                
-	                    <div idx="6" class="shared-recording recording">
-	    
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        Hahah no better way to start the day than with a call with Mr. Fahimsach! Hahah you're so Awesome bro! Wish you an Amazing day hermano!
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REb60abe61db9c5905b48fc680dde1c93d" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>2</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>6</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	                <div idx="29" class="comment">
-	    <img class="inline wakeup-box-shadow comment-img" src="/media/images/man-placeholder.jpg">
-	    <div class="comment-section">
-	        <a class="comment-username" href="/accounts/public/fahimsach/">Fahimsach</a>
-	        <div class="comment-content">This is an awesome feature! </div>
-	    </div>
-	</div>
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
-	                
-	                    <div idx="5" class="shared-recording recording">
-	    
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        Hahahah such an Awesome WakeUp! We still need to catch up Maha! Hope everything is going Awesome!
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REc37cfa0bff537a42442e4a5570f3b096" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>1</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>15</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
-	                
-	                    <div idx="4" class="shared-recording recording">
-	    
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        We're gonna need some luck for today bro - but we'll definitely manage!! Hahah good luck in your test today hermano!!
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE4aa48456c3cce4bb2d1f047d627b21d8" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>4</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>15</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	                <div idx="26" class="comment">
-	    <img class="inline wakeup-box-shadow comment-img" src="/media/mugshots/37c2f88f60.jpg">
-	    <div class="comment-section">
-	        <a class="comment-username" href="/accounts/public/nathanruttley/">Nathan Ruttley</a>
-	        <div class="comment-content">Good lucking writing your essay! Have a great day!</div>
-	    </div>
-	</div>
-	            
-	                <div idx="27" class="comment">
-	    <img class="inline wakeup-box-shadow comment-img" src="/media/images/man-placeholder.jpg">
-	    <div class="comment-section">
-	        <a class="comment-username" href="/accounts/public/anton/">Anton Smyrnov</a>
-	        <div class="comment-content">Okay,ah :p</div>
-	    </div>
-	</div>
-	            
-	                <div idx="28" class="comment">
-	    <img class="inline wakeup-box-shadow comment-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    <div class="comment-section">
-	        <a class="comment-username" href="http://wakeuproulette.com/accounts/public/wakeup/">Alejandro  Saucedo</a>
-	        <div class="comment-content">Thank you bro! Wish you an Awesome day as well!</div>
-	    </div>
-	</div>
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
-	                
-	                    <div idx="1" class="shared-recording recording">
-	    
-	    <a href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/2186397683.jpg">
-	    </a>
-	    <a class="share-username" href="http://wakeuproulette.com/accounts/public/wakeup/">
-	        Alejandro  Saucedo
-	    </a>
-	    <div class="share-body">
-	        Hah this is my Favourite WakeUp by far!! Andrea, eres la neta!!
-	    </div>
-	    <audio controls="" class="shared-recording-audio" data-played="0">
-	        <source src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REe2d6bfed4f5c74560079b4586327a364" type="audio/x-wav">
-	        Please use a Chrome or Firefox to listen to your recordings
-	    </audio>
-	    <div class="share-data">
-	        
-	            <div title="Aura" class="tooltip share-aura-button">
-	                
-	                <img src="http://wakeuproulette.com/media/icons/like-black.png"><span>4</span></div>
-	            <div title="Re-wakes" class="tooltip share-rewake-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-black.png">0</div>
-	            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-black.png"><span>23</span></div>
-	        
-	    </div>
-	    <div class="comments">
-	        <div id="comments-section">
-	            
-	        </div>
-	        <textarea placeholder="Write a comment..." class="comment-textarea"></textarea>
-	    </div>
-	</div>
+<div id="call-history-box">
+                
+                    
+<div idx="76" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+                    <a href="/accounts/public/yumei/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">Yumei Chua</div>
+                    </a>
+                
+            
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>4</span></div>
+        
+    </div>
+</div>
+
+                    
+<div idx="75" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+                    <a href="/accounts/public/yumei/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">Yumei Chua</div>
+                    </a>
+                
+            
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE61e4e3db4f6d88b8a33475d798a98cb6" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="73" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/sdnche/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Sdnche</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>0</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="72" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/sdnche/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Sdnche</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>0</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="69" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+                    <a href="/accounts/public/roman/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Roman</div>
+                    </a>
+                
+            
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="68" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/sloafe/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Sloafe</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE629d775b559afb62699439f2e95a2cc7" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>1</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>6</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="66" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/ehobeika/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/f17b0ae437.jpg">
+                        <div class="recording-username">Edmond Hobeika</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE7dd798071ea37a5f7d6ccda5a27af97d" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>9</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="65" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/iphone/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Iphone</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE7ea671daa758654eee5714f76ebb529a" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="63" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/iphone/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Iphone</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>3</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="62" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/daniel/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Daniel</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE64bbd860039b9e809fd3f041050795ab" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="60" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/fahimsach/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Fahimsach</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REb60abe61db9c5905b48fc680dde1c93d" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>6</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="58" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/Sharhan/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Sharhan</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE3f7dbc15a2024b9fe39ceb477182628b" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="56" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/roman/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Roman</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE71ae746b79f62f06af1e64a91eec8225" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="55" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/nathanruttley/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/37c2f88f60.jpg">
+                        <div class="recording-username">Nathan Ruttley</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE4aa48456c3cce4bb2d1f047d627b21d8" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>4</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>16</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="53" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/ykk255/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">Ykk255</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE9cddd1625e88e2ae2827a3f67839b279" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>10</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="52" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/B/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">B</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REeca9e4ccd1bad18755ed378739ee0ed6" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>1</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>2</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="49" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/rufusstone/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Rufusstone</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE9bbdab3ad0d37e1cdecae27616eeaca0" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>4</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="47" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/mel/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">Melina Linden</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE6936955483c63f1d66302c0a806df9f3" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>1</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>8</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="46" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE376316e75e3c98a2906504cd8f2385b0" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>5</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="44" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/niya/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/woman-placeholder.jpg">
+                        <div class="recording-username">Niya</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REc88431a6cf40404176c7e1a6400c27dc" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>4</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="40" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/acanbo/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/90b7d9db01.jpg">
+                        <div class="recording-username">Andrea Cano Botero</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REe2d6bfed4f5c74560079b4586327a364" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>5</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>24</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="32" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/fab/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Fab</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REaaaeb9d155062b3d438221141f130129" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>1</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>4</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="29" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/anton/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Anton Smyrnov</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REed34f10595bf8089e11c710fda89ea28" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="26" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/chris931/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Chris931</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE328cdd0c7d32c8806aaefb84e51d00e0" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>0</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="23" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/anton/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Anton Smyrnov</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE1d148fe8443cdf33611c34452b9d2b54" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>0</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="22" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/fahimsach/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Fahimsach</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REdc0868f0576e30e20e405432402458a1" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>5</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="20" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/donald/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Donald</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE242032a3cf332a0d3d9ffc6eb1e7cde5" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>2</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="18" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/mateo/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Mateo</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/RE5e5abf5e6f7d34f23444c03034c54ec1" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>2</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>7</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="11" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/mtimesj/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/mugshots/92d3886b6e.jpg">
+                        <div class="recording-username">Mtimesj</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <a data-reveal-id="share-modal" class="recording-share btn_publish">Share</a>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REc37cfa0bff537a42442e4a5570f3b096" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>3</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>15</span></div>
+        
+    </div>
+</div>
+
+                    
+                        <div idx="2" class="history-recording recording">
+    <div class="inline recording-audio-section">
+        <div class="recording-info">
+            
+                
+            
+                
+                    <a href="/accounts/public/iphone/">
+                        <img class="inline wakeup-box-shadow recording-img" src="http://wakeuproulette.com/media/images/man-placeholder.jpg">
+                        <div class="recording-username">Iphone</div>
+                    </a>
+                
+            
+
+            <div class="recording-privacy-box">
+                
+                    <span class="recording-privacy">[Secret]</span>
+                
+            </div>
+        </div>
+        <audio controls="" class="recording-audio" data-played="0">
+            <source class="recording-source" src="http://api.twilio.com/2010-04-01/Accounts/AC8f68f68ffac59fd5afc1a3317b1ffdf8/Recordings/REfdc641cf2ea06e6919db3f6ae88b1fb0" type="audio/x-wav">
+            Please use a Chrome or Firefox to listen to your recordings
+        </audio>
+    </div>
+    <div class="recording-data">
+        
+            <div title="Aura" class="tooltip aura-button"><img src="http://wakeuproulette.com/media/icons/like-white.png"><span>0</span></div>
+            <div title="Re-wakes" class="tooltip rewakes-button"><img src="http://wakeuproulette.com/media/icons/rewakeup-white.png"><span>0</span></div>
+            <div title="Play Count" class="tooltip play-count"><img src="http://wakeuproulette.com/media/icons/views-white.png"><span>1</span></div>
+        
+    </div>
+</div>
 </div>	

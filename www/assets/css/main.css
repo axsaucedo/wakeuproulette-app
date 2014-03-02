@@ -1,22 +1,26 @@
-/* GLOBAL */
-@font-face {
-    font-family: "franchise";
-    src: url("../fonts/Franchise-Bold.ttf") format("truetype");
-}
-@font-face {
-    font-family: "geosans";
-    src: url("../fonts/GeosansLight.ttf") format("truetype");
-}
-@font-face {
-    font-family: "ostrich";
-    src: url("../fonts/Ostrich.ttf") format("truetype");
-    src: url("../fonts/Ostrich.wofff") format("woff");
-    src: url("../fonts/Ostrich.svg") format("svg"); 
-    src: url("../fonts/Ostrich.otf") format("opentype"); 
-}
-@font-face {
+
+
+@media only screen {  
+  @font-face {
+      font-family: "franchise";
+      src: url("fonts/Franchise-Bold.ttf") format("truetype");
+  }
+  @font-face {
+      font-family: "geosans";
+      src: url("fonts/GeosansLight.svg") format("svg");
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'ostrich';
+      src: url("fonts/Ostrich.svg") format("svg");
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
     font-family: "nexabold";
-    src: url("../fonts/NexaBold.otf") format("opentype");
+    src: url("fonts/NexaBold.otf") format("opentype");
+  }
 }
 
 body {
@@ -30,7 +34,6 @@ body {
   background: black;
   overflow: hidden;
 }
-
 * {
 	outline: 0;
 	-webkit-touch-callout: none;
@@ -55,6 +58,15 @@ body {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
 	-webkit-tap-highlight-color: transparent;
 }
+a {
+  color: white;
+}
+.main-font {
+    font-family: geosans;
+}
+.secondary-font {
+    font-family: ostrich;
+}
 .page-title {
 	font-family: "geosans";
 	font-size: 30px;
@@ -70,6 +82,7 @@ body {
 	background: black;
 	color: white;
 	border: solid;
+  font-family: geosans;
 }
 .col-3 {
  	width: 33%;
@@ -117,6 +130,11 @@ body {
 	background: rgba(0,0,0,.6);
 	padding: 0px 20px 20px 20px;
 }
+.wur-form-input {
+    width: 60%;
+    border: none;
+    border-radius:10px;
+}
 
 
 /* Alarm */
@@ -129,13 +147,14 @@ body {
 	margin: auto auto;
 }
 .alarm-time {
-	width: 70%;
+	width: 75%;
 
 	font-family: "ostrich";
 	background: transparent;
-	border: none;
 	color: white;
-	font-size: 90px;
+  border: none;
+  margin-top: 35px;
+	font-size: 100px;
 }
 .alarm-arrow-up {
 	width: 50px;
@@ -181,7 +200,27 @@ body {
 	-webkit-transform: scale(.8,.8);
 }
 
+.repeat-checkbox {
+    position: absolute;
+    top: 190px;
+    right: 40px;
+    width: 150px;
+    height: 50px;
+    padding-top: 30px;
+}
+.repeat-checkbox div,span {
+    z-index: -1;
+}
+
 /* Switch */
+.alarm-switch {
+    position: absolute;
+    top: 220px;
+    left: 50px;
+    margin-left: 15px;
+    -webkit-transform: scale(2,2);
+}
+
 .onoffswitch {
     position: relative; width: 100px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -276,6 +315,9 @@ body {
   background: linear-gradient(top, #222 0%, #45484d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
 }
+.cool-checkbox input {
+    visibility: hidden; 
+}
 
 .cool-checkbox label:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -299,11 +341,11 @@ body {
   transform: rotate(-45deg);
 }
 
-.cool-checkbox label:hover::after {
+/*.cool-checkbox label:hover::after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
   opacity: 0.3;
-}
+}*/
 
 .cool-checkbox input[type=checkbox]:checked + label:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -314,7 +356,9 @@ body {
 
 
 /* WakeUps */
-
+.wakeup-time {
+    font-family: ostrich;
+}
 
 
 

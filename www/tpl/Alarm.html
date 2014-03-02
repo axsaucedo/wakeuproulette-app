@@ -6,7 +6,7 @@
 		<div class="alarm-arrow-up"><div class="arrow-up"></div></div>
 		<div class="alarm-arrow-down"><div class="arrow-down"></div></div>
 	</div>
-	<div id="switch" class="inline wakeup-box-shadow">
+	<div class="alarm-switch" class="inline wakeup-box-shadow">
         <input id="myonoffswitch" type="checkbox" name="alarmon" class="onoffswitch-checkbox" {% if request.user.profile.alarmon %}checked{% endif %}>
         <label class="onoffswitch-label" for="myonoffswitch">
             <div class="onoffswitch-inner">
@@ -15,9 +15,11 @@
             </div>
         </label>
     </div>
-	<span class="inline" style="float:right;position:relative;right:60px;">Repeat:</span>
+    <div class="repeat-checkbox">
+		<span class="inline" style="float:right;position:relative;right:60px;">Repeat:</span>
 		<div class="cool-checkbox" style="position:relative;top:-25px;left:0px;margin-right:20px;margin-bottom:0px;">
-			<input type="checkbox" value="None" id="recurrent" data-set_recurrent_url="{% url 'accounts.ajax.set_recurrent' %}" name="check" {% if request.user.profile.recurring %}checked{% endif %} />
-			<label for="recurrent"></label>
+				<input type="checkbox" class="check" value="None" id="recurrent" data-set_recurrent_url="{% url 'accounts.ajax.set_recurrent' %}" name="check"  checked/>
+				<label for="recurrent"></label>
+		</div>
 	</div>
 </form>

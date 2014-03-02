@@ -24,7 +24,8 @@ define(function (require) {
 
         events: {
             "click .alarm-arrow-up" : "alarm_up",
-            "click .alarm-arrow-down" : "alarm_down"
+            "click .alarm-arrow-down" : "alarm_down",
+            "click .repeat-checkbox" : "repeat_toggle"
         },
 
         alarm_up : function(event) {
@@ -37,6 +38,12 @@ define(function (require) {
             var hour = (parseInt($(".alarm-time").val().split(":")[0]) + 23) % 24;
             var time = (hour < 10 ? "0" : "") + hour + ":00";
             $(".alarm-time").val(time);
+        },
+
+        repeat_toggle : function(event) {
+            console.log(event.target);
+            var check = $('.check');
+            check.prop('checked', !check.prop('checked'));
         }
 
     });
